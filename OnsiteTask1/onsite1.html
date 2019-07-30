@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title> Onsite Task 1</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="onsite1.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<script src="jquery.ui.rotatable.js"></script>
+
+<link rel="stylesheet" href="jquery.ui.rotatable.css">
+<style>
+#target{
+background-color:blue;
+width:100px;
+height:100px;
+}
+</style>
+</head>
+<body>
+ <div id="target">
+  Rotate
+</div>
+<div class='resizable' id="mydiv" >
+  <div class='resizers'>
+    <div class='resizer top-left'></div>
+    <div class='resizer top-right'></div>
+    <div class='resizer bottom-left'></div>
+    <div class='resizer bottom-right'></div>
+  </div>
+</div>
+<script src="onsite1js1.js"></script>
+<script src="onsite1js2.js"></script>
+<script>
+var divWidth=$('#target').width();
+var divHeight = $("#target").height();
+$('#target').rotatable({
+  // specify an angle in radians (for backward compatability)
+  angle: false,      
+  // specify angle in degrees
+  degrees: false,    
+  // an image to use for a handle
+  handle: false,     
+   // where the handle should appear
+  handleOffset: {   
+    top: 0,
+    left: 0
+  },
+  // specify angle in radians
+  radians: false,          
+  // offset the center of the element for rotation
+  rotationCenterOffset: {  
+    top: divWidth/2,
+    left: divHeight/2
+  },
+  // should the element snap to a certain rotation?
+  snap: false,             
+  // angle in degrees that the rotation should be snapped to
+  step: 22.5,                 
+  // other transforms to performed on the element
+  transforms: null,  
+  // should the element rotate when the mousewheel is rotated?
+  wheelRotate: true,  
+
+  // a callback for during rotation
+  rotate: null, 
+  // callback when rotation starts
+  start: null,   
+  // callback when rotation stops
+  stop: null
+
+});
+
+</script>
+</body>
+</html>
